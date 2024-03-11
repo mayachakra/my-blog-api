@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+    <!--
+    <link rel="stylesheet" href="assets/css/form.css">
+    -->
+    <title>Document</title>
+</head>
+<body>
+    <div class="heading">
+        <h3>🌞</h3>
+        <!--
+        <h2>🌙</h2>
+        -->
+    </div>
+    <div class="container">
+        <div class="img-column">
+            <h2>My First Blog</h2>
+            <img src="https://via.placeholder.com/300x200" alt="Placeholder Image">
+        </div>
+
+        <div class="blog-post">
+            <h2>What's on your mind?</h2>
+            <form method="POST">
+                <label for="name">Username</label>
+                <br>
+                <input type="text" name="username" required>
+                <br>
+                <label for="title">Title</label>
+                <br>
+                <input type="text" name="title" required>
+                <br>
+                <label for="content">Content</label>
+                <br>
+                <textarea name="content" required></textarea>
+                <br>
+                <button type="post">Post</button>
+            </form>
+        </div>
+    </div>
+   
+    <!--
+    <script src="form.js"></script>
+    -->
+</body>
+</html>
+
+<!--
+GIVEN a personal blog
+WHEN I load the app,
+THEN I am presented with the landing page containing a form with labels and inputs for username, blog title, and blog content.
+WHEN I submit the form,
+THEN blog post data is stored to localStorage.
+WHEN the form submits,
+THEN I am redirected to the posts page.
+WHEN I enter try to submit a form without a username, title, or content,
+THEN I am presented with a message that prompts me to complete the form.
+WHEN I view the footer,
+THEN I am presented with a link to the developer's portfolio.
+-->
