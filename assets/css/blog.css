@@ -24,6 +24,7 @@ footer{
     color:grey;
     position: absolute;
     left:10px;
+    bottom: 5px;
 }
 .container{
     border:1px solid black;
