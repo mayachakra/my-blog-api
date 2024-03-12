@@ -1,85 +1,191 @@
 body{
     background-color: rgb(240, 240, 240);
 }
+h1{
+    text-align: left;
+    justify-content: left;
+
+}
 h2{
     align-items: center;
     justify-content: center;
     text-align: center;
-    width:500px;
     margin: 0 auto;
     padding:20px;
-    margin-top: 50%;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 h3{
     text-align: right;
     padding-right: 25px;
 }
+.col .dark{
+    background-color: rgb(240, 240, 240);
+}
+.dark .col .dark{
+    background-color: #000000;
+}
+.dark .col .light{
+    background-color: #000000;
+}
+/*
+.dark .col .light .dark{
+    background-color: #000000;
+}
+*/
+a{
+    text-decoration: none;
+    color:black;
+}
+.dark a{
+    color:white;
+}
+
 .container{
     display:flex;
     justify-content: space-between;
     margin-top: 10px;
 }
+.theme-button{
+    flex-direction: row;
+    display:flex;
+}
 .heading{
- border-bottom: 5px solid black;
- border-color: black;   
- background-color: rgb(240, 240, 240);
- width:auto;
- height:50px;
+    display:flex;
+    justify-content:space-between;
+    align-items: center;
+    /*aligns items across heading^*/
+    border-bottom: 5px solid black;
+    border-color: black;   
+    background-color: rgb(240, 240, 240);
+    width:auto;
+    height:50px;
 }
 .img-column{
-border-top: 5px solid black;
-border-right: 5px solid black;
-border-color: black;   
-background-color: rgb(240, 240, 240);
-width:50%;
-height:100vh;
-margin-right: 5px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-top: 5px solid black;
+    border-right: 5px solid black;
+    border-color: black;   
+    background-color: rgb(240, 240, 240);
+    width:50%;
+    height:100vh;
+    margin-right: 5px;
 }
 .img-column img{
     align-items: center;
     justify-content: center;
-    width:auto;
-    padding:50px;
-    padding-left: 30%;
+    width:75%;
+  
+}
+.toggle{
+    border-style: outset;
+    width:400px;
+    background-color: rgb(185, 87, 155);
+}
+.dark{
+    background-color: rgb(6, 6, 6);
+    height:100vh;
+    color:#ffffff;
+    transition: 0.3s ease-in-out;
+}
+.dark .container{
+    border:1px solid rgb(255, 255, 255);
+    transition: 0.3s ease-in-out;
+}
+.dark .heading{
+    background-color: rgb(6, 6, 6);
+    color:#ffffff;
+    transition: 0.3s ease-in-out;
+    border-bottom: 5px solid rgb(255, 255, 255);
+}
+.dark .img-column{
+    border-top: 5px solid rgb(255, 255, 255);
+    border-right: 5px solid rgb(255, 255, 255);
+    border-color: rgb(255, 255, 255);   
+    background-color: rgb(6, 6, 6);
+
+}
+.dark footer{
+    background-color: rgb(6, 6, 6);
+    color:#ffffff;
+    transition: 0.3s ease-in-out;
+    border-top: 5px solid rgb(255, 255, 255);
+}
+.dark .blog-post{
+    border-top:   rgb(255, 255, 255);
+    border-left:   rgb(255, 255, 255);
+    border-color: rgb(255, 255, 255);   
+    background-color: rgb(0, 0, 0);
+}
+.dark .blog-post form button[type="post"]{
+    color:rgb(0, 0, 0);
+    transition: all 0.5s ease-in-out;
+
 }
 .blog-post{
-border-top: 5px solid black;
-border-left: 5px solid black;
-border-color: black;   
-background-color: rgb(240, 240, 240);
-width:50%;
-height:100vh;
-margin-left: 5px;
-}
-.blog-post form{
-    align-items: center;
     justify-content: center;
-    width:500px;
-    margin: 0 auto;
-    padding:20px;
-   /* margin-top: 50%; */
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
-.blog-post form input[type="text"],
-.blog-post form input[type="email"],
-.blog-post form textarea{
-    width:100%;
-    padding:10px;
-    margin-bottom: 10px;
-    border: 1px solid palevioletred;
-    border-radius: 5px;
-    box-sizing: border-box;
+
+.light{
+    background-color: rgb(243, 236, 236);
+    height:100vh;
+    color:#000000; 
+    transition: 0.3s ease-in-out;
+
 }
-.blog-post form button[type="post"]{
-    width:100%;
-    padding:10px;
-    border: none;
-    border-radius: 5px;
-    background-color: rgb(209, 117, 174);
-    color:white;
+
+.switch-theme{
+    position: relative;
+    display: inline-block;
+    width:60px;
+    height: 35px;
+}
+.switch-theme input{
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.slider{
+    position: absolute;
     cursor:pointer;
-    transition: all 0.5s ease-in-out;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    background-color: rgb(8, 8, 8);
+    -webkit-transition:0.5s;
+    transition: 0.5s ease-in-out;
 }
-.blog-post form button[type="post"]:hover{
-    background-color: rgb(255, 185, 230);
+.slider:before{
+    position:absolute;
+    content:"";
+    height:25px;
+    width:25px;
+    left:5px;
+    right:5px;
+    background-color: rgb(122, 116, 120);
+    -webkit-transition:0.5s;
+    transition: 0.5s ease-in-out;
+    border-radius: 35px;
 }
+input:checked + .slider{
+    background-color: rgb(244, 180, 225);
+}
+input:focus + .slider{
+    background-color: rgb(159, 155, 159);
+}
+input:checked + .slider:before{
+    -webkit-transform:translateX(25px);
+    -ms-transform: translateX(25px);
+    transition: translateX(25px);
+}
+.light, .dark{
+    cursor:pointer;
+}
+
+

@@ -5,18 +5,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/form.css">
+    <script src="assets/js/logic.js" defer></script>
+    <script src="assets/js/form.js" defer ></script>
+    <script src="assets/js/blog.js" defer></script>
+
     <!--
     <link rel="stylesheet" href="assets/css/form.css">
     -->
-    <title>Document</title>
+    <title>First Blog</title>
 </head>
 <body>
     <div class="heading">
-        <h3>🌞</h3>
-        <!--
-        <h2>🌙</h2>
-        -->
-    </div>
+        <h1>My First Blog</h1>
+        <div class="theme-button">
+            <div class="col">
+                <span class="light">🌞</span> 
+            </div>
+            <label class="switch-theme">
+                <input type="checkbox" id="toggle">
+                <span class="slider"></span>
+            </label>
+            <div class="col">
+                <span class="dark">🌙</span> 
+            </div>
+        </div>
+        </div>
+
     <div class="container">
         <div class="img-column">
             <h2>My First Blog</h2>
@@ -25,31 +40,29 @@
 
         <div class="blog-post">
             <h2>What's on your mind?</h2>
-            <form method="POST">
+            <form id="blog-form" method="POST" action="blog.html">
                 <label for="name">Username</label>
                 <br>
-                <input type="text" name="username" required>
+                <input type="text" name="username" id="username" required>
                 <br>
                 <label for="title">Title</label>
                 <br>
-                <input type="text" name="title" required>
+                <input type="text" name="title" id="title" required>
                 <br>
                 <label for="content">Content</label>
                 <br>
-                <textarea name="content" required></textarea>
+                <textarea name="content" id="content"  required></textarea>
                 <br>
-                <button type="post">Post</button>
+                <button type="submit" id="post">Post</button>
             </form>
         </div>
     </div>
-   
-    <!--
-    <script src="form.js"></script>
-    -->
 </body>
 </html>
 
 <!--
+    <button type="submit"><a href="blog.html" class="button">Post</a>
+                </button>
 GIVEN a personal blog
 WHEN I load the app,
 THEN I am presented with the landing page containing a form with labels and inputs for username, blog title, and blog content.
